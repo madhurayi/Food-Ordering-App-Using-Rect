@@ -1,0 +1,23 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "This is namaste React By Madhu",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Madhu",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-react-jsx": "^7.24.7",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  }
+}
