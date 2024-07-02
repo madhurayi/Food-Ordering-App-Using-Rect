@@ -2,6 +2,7 @@ import React from "react";
 import RestarauntCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body=()=>{
 
@@ -26,18 +27,19 @@ const Body=()=>{
      );
      const json=await data.json();
      console.log(json);
+     console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      
      
     }
 
-    //conditional Rendering
-    // if(listOfRestaurants.length===0){
-    //   return <Shimmer/>;
-    // }
+    // conditional Rendering
+    if(filteredRestaurants===null || listOfRestaurants==null){
+      return <Shimmer/>;
+    }
 
-    return listOfRestaurants.length===0 ? <Shimmer/> : (
+    return (
         <div className="body">
             <div className="filter">
               <div className="search">
@@ -60,7 +62,8 @@ const Body=()=>{
               </button>
             </div>
             <div className="res-container">
-               {filteredRestaurants.map(restaurant => <RestarauntCard key={restaurant.info.id} resData={restaurant}/>)}
+              {console.log("entereted into body")}
+               {filteredRestaurants.map(restaurant =><Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestarauntCard  resData={restaurant}/></Link> )}
             </div>
         </div>
     )
