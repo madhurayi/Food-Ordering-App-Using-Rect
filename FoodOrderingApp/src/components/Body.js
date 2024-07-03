@@ -27,7 +27,7 @@ const Body=()=>{
      );
      const json=await data.json();
      console.log(json);
-     console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+     console.log("hii"+json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      
@@ -62,7 +62,6 @@ const Body=()=>{
               </button>
             </div>
             <div className="res-container">
-              {console.log("entereted into body")}
                {filteredRestaurants.map(restaurant =><Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestarauntCard  resData={restaurant}/></Link> )}
             </div>
         </div>

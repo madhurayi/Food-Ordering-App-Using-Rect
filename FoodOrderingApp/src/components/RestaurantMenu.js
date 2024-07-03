@@ -6,7 +6,7 @@ import { MENU_API } from "../utils/constants";
 const RestarauntMenu= ()=>{
 
     const [resMenu,setResMenu]=useState(null);
-    const [resId] = useParams();
+    const {resId} = useParams();
     console.log(resId);
 
     useEffect(()=>{
