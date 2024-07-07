@@ -3,6 +3,7 @@ import RestarauntCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body=()=>{
 
@@ -13,7 +14,7 @@ const Body=()=>{
 
     const [searchText,setSearchText]= useState("");
 
-
+    const onlineStatus=useOnlineStatus();
     //Whenever state variables update, react triggers a reconciliation cycle(re rennders the component.)
     console.log("hii");
     
@@ -33,6 +34,8 @@ const Body=()=>{
      
      
     }
+
+    if(onlineStatus===false) return <h1>Looks Like You are Offline. Check the Internet Connection</h1>
 
     // conditional Rendering
     if(filteredRestaurants===null || listOfRestaurants==null){
