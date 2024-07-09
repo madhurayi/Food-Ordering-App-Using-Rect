@@ -2,7 +2,7 @@ import React from "react";
 import RestarauntCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body=()=>{
@@ -23,6 +23,7 @@ const Body=()=>{
     },[]);
 
     const fetchData=async()=>{
+      
       const data= await fetch(
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5462927&lng=78.2128113&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
      );
@@ -44,28 +45,34 @@ const Body=()=>{
 
     return (
         <div className="body">
-            <div className="filter">
-              <div className="search">
-                <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+            <div className="filter flex">
+              <div className="search m-4 p-4">
+                <input type="text" className="border border-solid border-black" value={searchText} onChange={(e)=>{
                   setSearchText(e.target.value);
                 }} />
-                <button onClick={()=>{
+                <button className="px-4 py-2 bg-green-100 m-2 rounded-lg" onClick={()=>{
                     const filteredRestaurants= listOfRestaurants.filter((res)=>
                         res.info.name.toLowerCase().includes(searchText.toLowerCase())
                     )
                     setFilteredRestaurants(filteredRestaurants);
                 }}>Search</button>
               </div>
-              <button className="filter-btn" onClick={()=>{
+              <div className="search m-4 p-4 flex items-center">
+              <button className="bg-gray-100 px-4 py-2 rounded-lg" onClick={()=>{
              const filteredRestaurants=listOfRestaurants.filter((data)=>data.info.avgRating>4.5);
               setFilteredRestaurants(filteredRestaurants);
               // console.log(listOfRestaurants); 
             }}>
                 Top Rated Restaraunts
               </button>
+              </div>
+              
             </div>
-            <div className="res-container">
-               {filteredRestaurants.map(restaurant =><Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestarauntCard  resData={restaurant}/></Link> )}
+            <div className="flex flex-wrap m-2">
+               {filteredRestaurants.map(restaurant =>
+               <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}>
+                  <RestarauntCard  resData={restaurant}/>
+                </Link> )}
             </div>
         </div>
     )
