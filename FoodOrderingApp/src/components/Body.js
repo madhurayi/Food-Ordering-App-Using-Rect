@@ -68,7 +68,7 @@ const Body=()=>{
               </div>
               
             </div>
-            <div className="flex flex-wrap m-2">
+            <div className="flex flex-wrap justify-normal">
                {filteredRestaurants.map(restaurant =>
                <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}>
                   <RestarauntCard  resData={restaurant}/>
