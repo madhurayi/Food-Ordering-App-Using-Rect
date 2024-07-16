@@ -1,9 +1,10 @@
 import React from "react";
 import RestarauntCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link, NavLink } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body=()=>{
 
@@ -15,6 +16,7 @@ const Body=()=>{
     const [searchText,setSearchText]= useState("");
 
     const onlineStatus=useOnlineStatus();
+    const {loggedInUser,setUserName}= useContext(UserContext);
     //Whenever state variables update, react triggers a reconciliation cycle(re rennders the component.)
     console.log("hii");
     
@@ -65,6 +67,11 @@ const Body=()=>{
             }}>
                 Top Rated Restaraunts
               </button>
+              </div>
+              <div className="search m-4 p-4 flex items-center">
+                <input className="border border-black" value={loggedInUser} onChange={(e)=>{
+                  setUserName(e.target.value);
+                }}/>
               </div>
               
             </div>

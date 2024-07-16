@@ -1,13 +1,16 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState,useEffect } from "react";
+import { useState,useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Header = () => {
 
     // console.log("header renered");
     const [btnNameReact,setBtnNameReact]=useState("Login");
     const onlineStatus=useOnlineStatus();
-    console.log(onlineStatus);
+    const {loggedInUser}= useContext(UserContext);
+    console.log(loggedInUser);
+    // console.log(onlineStatus);
     //If there is no dependency array ==> use effect is called on every render
     //If the dependency array is empty ==> use effect is called on initial render(just once)
 
@@ -31,6 +34,7 @@ const Header = () => {
                     <button className="login-btn" onClick={()=>{
                        btnNameReact==="Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
                     }}> {btnNameReact}</button>  
+                    <li className="px-4 font-bold">{loggedInUser}</li>
                 </ul>  
             </div>
         </div>
