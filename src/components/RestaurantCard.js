@@ -14,7 +14,7 @@ const RestarauntCard = (props) => {
           src={CDN_URL + cloudinaryImageId}
         />{" "}
         <div className=" absolute w-[286px] h-[191px] -bottom-9 ">
-          <p className="text-center text-white font-bold text-2xl items-center font-serif bg-gradient-to-t from-black to-transparent rounded-lg ">
+          <p className="text-center text-white font-bold text-2xl items-center font-gilroy bg-gradient-to-t from-black to-transparent rounded-lg ">
             {props?.resData?.info?.aggregatedDiscountInfoV3?.header
               ? props?.resData?.info?.aggregatedDiscountInfoV3?.header +
                 "  " +
@@ -28,15 +28,17 @@ const RestarauntCard = (props) => {
             <div className="bg-green-600 w-5 h-5 rounded-full relative">
               <FaStar className="text-white absolute inset-0 m-auto text-[12px]" />
             </div>
-            <span className=" text-base font-semibold">
+            <span className=" text-base font-gilroy font-semibold">
               {avgRating} {" • "}
               {sla.slaString}
             </span>
           </div>
-          <p className="text-gray-700 text-base truncate">
+          <p className="text-gray-700 text-base truncate font-gilroy">
             {cuisines.join(", ")}
           </p>
-          <p className="text-gray-700 text-base truncate">{locality}</p>
+          <p className="text-gray-700 text-base truncate font-gilroy">
+            {locality}
+          </p>
         </div>
       </div>
     </div>

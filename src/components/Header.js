@@ -45,7 +45,13 @@ const Header = () => {
           <Link to={"/cart"}>
             <div className="flex flex-row items-center relative">
               <img src={EMPTY_CART} className="w-10 h-10 font-bold"></img>
-              <span className="absolute pl-5 pb-3">{cartItems.length}</span>
+              <span
+                className={`absolute pb-3 ${
+                  cartItems.length <= 10 ? "pl-[17px]" : "pl-[14px]"
+                }`}
+              >
+                {cartItems.length}
+              </span>
               <span>cart</span>
             </div>
           </Link>

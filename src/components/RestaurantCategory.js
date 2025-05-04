@@ -17,15 +17,16 @@ const RestaurantCategory = ({
 
   return (
     <div>
-      <div className="w-8/12 mx-auto pb-4 my-4 bg-white">
+      <div className="w-7/12 mx-auto my-6 bg-gray-100 rounded-sm h-5 "></div>
+      <div className="w-7/12 mx-auto pb-4 my-4 bg-white">
         <div
           className="flex justify-between cursor-pointer"
           onClick={handleClick}
         >
-          <span className="font-bold pt-3 pl-3">
+          <span className="font-bold text-lg  pt-3 pl-3 font-gilroy">
             {data.title} ({data.itemCards.length})
           </span>
-          <span className="pt-3">
+          <span className="pt-3 font-gilroy">
             {!showItems ? <IoIosArrowDown /> : <IoIosArrowUp />}
           </span>
         </div>
