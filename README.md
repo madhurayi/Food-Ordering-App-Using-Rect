@@ -1,5 +1,6 @@
 # 🍔 Food Ordering App
-A modern frontend food delivery application built using React.js and Swiggy's Live API, developed as part of the Namaste React course by Akshay Saini. This project demonstrates key concepts of React along with real-world API integration. 🚀
+-    A modern frontend food delivery application built using React.js and Swiggy's Live API, developed as part of the Namaste React course by Akshay Saini. This project demonstrates key concepts of React along with real-world API integration. 🚀
+  
 ---
 
 ## 🚀 Tech Stack
@@ -7,6 +8,7 @@ A modern frontend food delivery application built using React.js and Swiggy's Li
 -   Bundler: Parcel
 -   Styling: Tailwind CSS
 -   State Management: Redux Toolkit
+
 
 ## ✨ Features
 -   ⚡ Shimmer UI for seamless loading experience
@@ -17,6 +19,7 @@ A modern frontend food delivery application built using React.js and Swiggy's Li
 -   🔍 Search restaurants by name
 -   📋 Explore restaurant menus with full dish details and pricing
 -   ⭐ Filter top-rated restaurants
+
 
 ## 🛠️ Getting Started
 1. Clone the repository
