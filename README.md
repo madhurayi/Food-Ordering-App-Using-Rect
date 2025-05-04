@@ -37,4 +37,7 @@ Home Page:-
 ![image](https://github.com/user-attachments/assets/67441929-1b71-43cb-b73e-68a26e90163b)
 
 
+Restaurant Menu Page:-
+
+![image](https://github.com/user-attachments/assets/2d64f1bd-613b-4dfd-a0e2-bb6c4d849af2)
 
